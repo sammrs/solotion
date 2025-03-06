@@ -1,8 +1,23 @@
-a = [1, 2, 3, 4, 5]
-n = len(a)
-min_num = a[0]  # Initialize with first number
-for i in range(n):
-    if a[i] < min_num:  # If current number is smaller than min_num
-        min_num = a[i]  # Update min_num with the smaller number
+def find_minimum(numbers):
+    if not numbers:  # Check if list is empty
+        return None
+    
+    min_num = numbers[0]
+    for i in range(len(numbers)):
+        if numbers[i] < min_num:
+            min_num = numbers[i]
+    return min_num
 
-print(f"The minimum number in the list is: {min_num}") 
+# Example usage
+try:
+    # You can change these numbers or get input from user
+    a = [1, 2, 3, 4, 5]
+    result = find_minimum(a)
+    
+    if result is not None:
+        print(f"The minimum number in the list is: {result}")
+    else:
+        print("The list is empty!")
+        
+except Exception as e:
+    print(f"An error occurred: {e}") 
